@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+{% load staticfiles %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" type="text/css" href="{% static 'global/bootstrap/css/bootstrap.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'global/bootstrap/css/bootstrap-theme.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'global/overrides/ov1.css' %}"/>
+{#<link rel="stylesheet" type="text/css" href="{% static 'global/mdl/css/material.min.css' %}"/>#}
+{% block morecss %}
+
+{% endblock %}
+<script type="text/javascript" src="{% static 'global/jquery/jquery-2.1.4.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'global/bootstrap/js/bootstrap.js' %}"></script>
+<script type="text/javascript" src="{% static 'global/d3/d3.min.js' %}"></script>
+{#<script type="text/javascript" src="{% static 'global/mdl/js/material.min.js' %}"></script>#}
+
+{% block morejavascript %}
+
+{% endblock %}
+</head>
+<body>
+
+<div class= 'navbar navbar-default navbar-static-top'>
+	<div class='container'>
+	<div class="navbar-header">
+		<div class="main-title"><a class="navbar-brand header" href="/"> Pillr </a></div>
+
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			<span class='sr-only'> Toggle Navigation </span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+	</div>
+		<ul class="nav navbar-nav navbar-right collapse navbar-collapse">
+		{% if user.is_authenticated %}
+			<li> <a href="/"> Hi {{ user.username }}! </a></li>
+            {% if perms.dashboard.add_prescription %}
+
+			    <li> <a href="/dashboard/">Dashboard </a></li>
+            {% else %}
+
+                <li> <a href="/timeline/">Timeline </a> </li>
+			{% endif %}
+
+
+			<li> <a href="/users/logout/">Logout </a>
+		{% else %}
+			<li> <a href="/users/login/">Login </a></li>
+			
+			<li> <a href="/users/register/">Register </a></li>
+		{% endif %}
+
+		</ul>
+	</div>
+</div>
+
+{% block content %}
+{% endblock %}
+
+
+
+
+</body>
+</html>

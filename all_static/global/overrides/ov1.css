@@ -1,0 +1,60 @@
+@font-face{
+	font-family: amaranth;
+	src: url("../fonts/Amaranth-Regular.otf");
+}
+
+@font-face{
+	font-family: opensans;
+	src: url("../fonts/OpenSans-Light.ttf");
+}
+
+.navbar-toggle{
+	border:none;
+	padding-top: 0.5em;
+}
+
+.main-title{
+	margin-top: 0.5em;
+}
+
+.navbar{
+	margin-bottom: 0;
+}
+.header{
+	
+	font-family: amaranth;
+	font-size: 3em;
+	text-decoration: none;
+
+}
+
+h1{
+	font-family: amaranth;
+}
+
+h2{
+	font-family: amaranth;
+}
+
+
+h3{
+	font-family: amaranth;
+}
+
+p{
+	font-family: opensans;
+	font-size: 1.5em;
+}
+
+p.t1{
+	font-size: 2em;
+}
+
+p.t2{
+	font-size: 1.3em;
+}
+
+
+li{
+	font-family: opensans;
+}

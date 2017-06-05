@@ -1,0 +1,38 @@
+
+#
+# 	STEPS TO INSTALL : YAFET GETACHEW, YAPHET GOBENA, BEDE ADAM
+#
+#
+#
+
+
+install python (Specifically 2.7.6)
+install postgre (And subsequently the python driver for postgresql) and check it!! google it if u dnt know how to do that
+install pip ( easy apt-get install pip)
+install django (1.8) with pip (pip install django)
+
+
+you can use  virtualenv or not, I didn't, just use django-admin to start an empty project'''
+
+install uwsgi using pip , but you most definetly need to install python-dev first ( do a quick apt-get for that)
+install nginx (doesn't matter which version, at this time I'm using 1.45)
+
+Ride a horse
+
+
+visit uwsgi-docs.readthedocs.org/en/latest/tutorials/Django_and_nginx.html to know how to setup django and nginx
+
+remember not to do a symlink in sites-enabled instead copy pillr_nginx.conf there and delete or just rename default.conf to something else
+nginx logs are in /var/logs/nginx/ they will help you oh wanderous one!
+
+start nginx ( service nginx start )
+start uwsgi ( uwsgi --ini pillr_uwsgi.ini) this won't work (probably)
+
+JUST RUN  --$ uwsgi --socket pillr.sock --module pillr.wsgi --processes=100 --chmod-socket=666      // Creepy number (illuminati?)
+
+
+
+ps. 
+
+	DON'T FORGET TO ADJUST PATHS IN CONF INI AND SETTINGS.PY FILES
+	DON'T FORGET TO "python manage.py collectstatic" WHEN YOU ADD NEW STATIC FILES

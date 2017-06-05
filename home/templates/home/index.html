@@ -1,0 +1,126 @@
+{% extends "global/base.html" %}
+
+{% block morecss %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'home/css/style.css' %}">
+{% endblock %}
+
+{%block content%}
+
+<div class="container central"> 
+
+	<h1> Welcome to Pillr. </h1>
+	<p class="t1"> &emsp;An application dedicated to identifying and stopping harmful diseases.</p>
+	<p> It uses intelligent algorithms, cutting edge technology and, ofcourse, your feedback. </p>
+    <p> DEVELOPED ENTIRELY USING OPEN SOURCE TECHNOLOGY </p>
+
+</div>
+
+<div class="container">
+	
+	<div class="row well-lg">
+		
+		<div class="col-md-3">
+			<h3>Prescriptions</h3>
+			<p class="t2">
+				&emsp;You will be able to get a prescription from your doctor and fill that prescription at any pharmacy easily.
+
+			</p>
+		</div>
+		<div class="col-md-3">
+			<h3>Reminders</h3>
+			<p class="t2">
+				&emsp;The Pillr app for your smartphone will be able to remind you exactly when to take your medicine and it will also tell you about crucial directions and steps to take during a course of treatment so that it will be effective.
+			</p>
+		</div>
+		<div class="col-md-3">
+			<h3>Feedback</h3>
+			<p class="t2">
+				&emsp;Our app will let you comment about the effects a treatment has on your health. This will help doctors choose a better course of treatment for you, and help pharmaceutical companies make better drugs.
+			</p>
+		</div>
+		<div class="col-md-3 ">
+			<h3>Risky Areas</h3>
+			<p class="t2">
+				&emsp;In case of an outbreak (flu, malaria etc.) our app will let you know, it will tell you which areas to avoid, and what precautions to take.
+			</p>
+		</div>
+
+	</div>
+
+	<div class="row well-lg secondary">
+		
+		<div class="col-md-12 text-center">
+			<h2>Pillr API (Application Programming Interface)</h2>
+
+			<div class="col-md-4">
+                <h3>What Is An API</h3>
+                <p class="t2">
+
+                    An api is a language for other applications to communicate with Pillr. They can receive and submit information.
+                </p>
+            </div>
+			<div class="col-md-4">
+                <h3>Send Information</h3>
+                <p class="t2">
+
+                    Programmers can simply use our submit-data api module to submit information to Pillr,
+                    for example the following line creates a user:
+                <p>REQUEST</p>
+                <p class="code">/api/submit_data/create_user?uname="UNAME"&email="EMAIL"</p>
+                <p>RESPONSE</p>
+                <p class="code_response">Successful</p>
+
+                </p>
+
+
+            </div>
+			<div class="col-md-4">
+
+
+                <h3>Receive Information</h3>
+                <p class="t2">
+
+                    Programmers can also receive specialized information, for example if a programmer wants to know how many new malaria cases are to be expected next month, he can use the following receive_data module:
+                <p>REQUEST</p>
+                <p class="code">/api/receive_data/?type="prediction"<br>&disease="malaria"&month="11"&year="2015"</p>
+                <p>RESPONSE</p>
+                <p class="code_response">
+                    JSON_RESPONSE<br>
+                    {<br>
+                        disease: "malaria"<br>
+                        date: "01/11/2015"<br>
+                        expected_new_cases:"21"<br>
+                    }
+
+                </p>
+
+                </p>
+
+
+            </div>
+		</div>
+
+
+	</div>
+
+    <div class="row well-lg">
+
+		<div class="col-md-12 text-center">
+			<h2>Security is at the core of our application</h2>
+			<p>
+				YOU ARE ANONYMOUS :
+				Your identification infromation will always be confidential, only your doctor will be able to know who you are. Your feedback and any other data you provide will be entirely anonymous. Because of how our database has been built your name will be encrypted; so technically even we don't know who you are.
+			</p>
+		</div>
+	</div>
+
+    <div class="row well-lg primary">
+
+		<div class="col-md-12 text-center">
+		</div>
+	</div>
+
+</div>
+
+{% endblock %}

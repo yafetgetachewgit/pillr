@@ -1,0 +1,96 @@
+{% extends "global/base.html" %}
+
+{% block content %}
+<div class="container padtop">
+	<div class="panel panel-default">
+		<table class="table table-responsive table-striped">
+			<tr>
+			<th>Drug Name</th>
+			<th>Start Date</th>
+			<th>Duration of Treatment</th>
+			<th>Doses</th>
+			<th>Doses Remaining</th>
+			</tr>
+			{% for p in prescriptions %}
+
+			<tr>
+
+				<td>{{ p.drug.drug_name }}</td>
+				<td>{{ p.start_date }}</td>
+				<td>{{ p.treatment_duration_days }} days.</td>
+				<td>{{ p.doses }}</td>
+				<td>{{ p.doses_remaining }} </td>
+
+			</tr>
+
+			{% endfor %}
+
+		</table>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="panel panel-primary text-capitalize text-center secondary">
+				<h2> Doctors </h2>
+				{% for d in doctors %}
+
+				<p>{{ d }}</p>
+
+			{% endfor %}
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="panel panel-primary text-capitalize text-center secondary">
+	            <h2> Schedule Score &nbsp;The higher the score the better</h2>
+				<p> {{ score }} out of {{ total_score }}</p>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+        <div class="col-md-4">
+			<div class="panel panel-primary text-capitalize text-center secondary">
+                <h2> Feedbacks </h2>
+				<p>{{ feedbacks.count }}</p>
+			</div>
+		</div>
+		<div class="col-md-8">
+			<div class="panel panel-primary text-capitalize text-center secondary">
+				<h2> How you reacted to drugs </h2>
+				<table class="table table-responsive table-striped">
+				<tr>
+					<th></th>
+					<th></th>
+					<th>Comment</th>
+				</tr>
+				{% for f in feedbacks %}
+
+					<tr>
+						<td>
+							{{ f.prescription.drug.drug_name }}
+						</td>
+
+						<td>
+							{% if f.rating == 2 %}
+								I feel better after starting to take this drug
+							{% elif f.rating == 1 %}
+								I have not seen any significant change after starting this medication
+							{% elif f.rating == 0 %}
+								I've been feeling worse since starting this drug
+							{% endif %}
+
+						</td>
+						<td>{{ f.comment }}</td>
+
+
+					</tr>
+
+				{% endfor %}
+			</table>
+		</div>
+			</div>
+
+
+	</div>
+
+</div>
+
+{% endblock %}

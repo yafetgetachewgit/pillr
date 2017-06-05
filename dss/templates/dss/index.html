@@ -1,0 +1,53 @@
+{% extends "global/base.html" %}
+{% block morecss %}
+    {% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'dss/css/visuals.css' %}">
+{% endblock %}
+
+{% block content%}
+
+<div class="container padtop center-block">
+
+<div id = "panel">
+    <table class="table table-responsive table-bordered">
+        <th>Notification Date</th>
+        <th>Patient Username</th>
+        <th>Drug Name</th>
+        <th>Timing</th>
+        {% for s in scores %}
+            <tr>
+                <td>{{ s.prescription_missed }}</td>
+                <td>{{ s.patient }}</td>
+                <td>{{ s.prescription.drug.drug_name }}</td>
+                {% if s.score == s.MISSED %}
+                    <td class="important">Prescription Missed</td>
+
+                {% elif s.score == s.TAKEN%}
+                    <td class="notice">Prescription Taken</td>
+                {% elif s.score == s.DELAYED%}
+                    <td class="secondary_importance">Prescription Delayed</td>
+                {% endif %}
+
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<div id="charts_drug_feedback">
+
+</div>
+
+
+</div>
+
+    {% load staticfiles %}
+    <script>
+        (function(){
+            drug_responses = {{ data_feedback|safe }};
+
+
+        })(window.onload)
+    </script>
+    <script type="text/javascript" src="{% static 'dss/js/drug_feedback.js' %}"></script>
+
+{% endblock %}

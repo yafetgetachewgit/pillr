@@ -1,0 +1,36 @@
+{% extends "global/base.html"%}
+{% block morecss %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'global/bootstrap/css/bootstrap-datetimepicker.min.css' %}">
+{% endblock %}
+{% block content %}
+
+                <div class="col-md-12">
+
+                    </div>
+
+                <div class="container padtop">
+                <div class="row well">
+
+                <div class="col-md-12">
+
+                    <form id = "prescription_form" method="post" action="/dashboard/prescribe/">
+                    {% csrf_token %}
+                    {{prescription_form.as_p}}
+                    <p><input class="btn btn-default" type="submit" name="submit" value="Prescribe"/></p>
+                    <input type="hidden" name="next" value="{{ next }}"/>
+
+                    </form>
+
+                </div>
+
+                </div>
+                </div>
+
+
+{% endblock %}
+
+{% block morejavascript %}
+    <script type="text/javascript" src="{% static 'global/bootstrap/js/bootstrap-datetimepicker.min.js' %}"></script>
+{% endblock %}
+

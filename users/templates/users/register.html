@@ -1,0 +1,37 @@
+{% extends "global/base.html"%}
+{% block morecss %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'users/css/style.css' %}">
+
+{% endblock %}
+{% block content %}
+
+	<div class="container padtop">
+	<div class="row well">
+	
+	<div class="col-md-12">
+	{% if user.is_authenticated %}
+		<p> You are already registered, if you want to register someone else you need to <a href="/users/logout/">Logout</a> first</p>
+	{% else %}
+		{% if registered %}
+
+			<p> You Are Now Registered As A Patient </p>
+			<a href="/"> Return To Homepage </a>
+
+		{% else %}
+
+			<form id = "user_form" method="post" action="/users/register/" enctype="multipart/form-data">
+			{% csrf_token %}
+			{{ user_form.as_p}}
+			{{ info_form.as_p}}
+			<p><input type="submit" name="submit" value="Register"/></p>
+			</form>
+
+		{% endif %}
+	{% endif %}
+	</div>
+	</div>
+	</div>
+
+{% endblock %}
+

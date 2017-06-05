@@ -1,0 +1,17 @@
+{% extends "global/base.html" %}
+
+
+{% block content %}
+    <div class="container padtop">
+	<div class="row well">
+
+	<div class="col-md-12">
+    <form method="post" action="/timeline/feedback/">
+        {{ feedback_form.as_p }}
+        <input type="submit" value="send"/>
+        {% csrf_token %}
+    </form>
+    </div>
+    </div>
+    </div>
+{% endblock %}

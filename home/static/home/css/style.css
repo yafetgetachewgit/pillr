@@ -1,0 +1,9 @@
+.central{
+	background-image: url("../images/congruent_pentagon.png");
+}
+
+.secondary{
+	color: white;
+	background-color: #22313f;
+	border-radius: 0;
+}

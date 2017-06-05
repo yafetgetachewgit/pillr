@@ -1,0 +1,33 @@
+
+PATIENT :
+	- Registers
+	- Views basic info and directions about the drug
+	- Views notifications and reminders to take the drug, contact the doctor
+	- Gets virtual prescriptions to take to the pharmacy to authenticate and receive the drugs
+	- Provides feedback about the treatment and the drugs
+	- Views a general overview of the treatment plan ( Calendar/Schedule of treatment)
+	- Communicates with doctors
+
+DOCTOR : 
+	- Registers
+	- Monitors patient progress via alerts
+	- Prescribes drugs to patients securely
+	- Benefits from other DSS functionalities *
+
+PHARMACY :
+	- Registers
+	- Authenticates prescription
+	- Confirms that patient received prescription
+
+GOVERNMENT :
+	- Registers
+	- Benefits from other DSS functionalities *
+
+
+
+* DSS Functionalities :
+	- Identify and prevent drug resistant pathogens
+	- Identify possible disease outbreaks
+	- Identify risk areas
+	- Identify otimal inoculation zones
+	- Provide other information via an API

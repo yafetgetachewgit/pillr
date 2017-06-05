@@ -1,0 +1,103 @@
+@font-face{
+	font-family: amaranth;
+	src: url("../fonts/Amaranth-Regular.otf");
+}
+
+@font-face{
+	font-family: opensans;
+	src: url("../fonts/OpenSans-Light.ttf");
+}
+
+.navbar-toggle{
+	border:none;
+	padding-top: 0.5em;
+}
+
+.main-title{
+	margin-top: 0.5em;
+}
+
+.navbar{
+	margin-bottom: 0;
+}
+.header{
+	
+	font-family: amaranth;
+	font-size: 3em;
+	text-decoration: none;
+
+}
+
+h1{
+	font-family: amaranth;
+}
+
+h2{
+	font-family: amaranth;
+}
+
+
+h3{
+	font-family: amaranth;
+}
+
+p{
+	font-family: opensans;
+	font-size: 1.5em;
+}
+
+p.t1{
+	font-size: 2em;
+}
+
+p.t2{
+	font-size: 1.3em;
+}
+
+
+li{
+	font-family: opensans;
+}
+
+.padtop {
+	padding-top: 3em;
+}
+
+#id_start_date{
+	width: 200px;
+}
+
+.box_alert{
+    height: 50%;
+    color: red;
+}
+th{
+    font-family: amaranth;
+    font-size: 1.2em;
+}
+
+.important{
+    background-color: #ff3d00;
+    color: white;
+}
+
+.secondary_importance{
+    background-color: #f9a825;
+    color:white;
+}
+
+.notice {
+    background-color: #00acc1;
+    color:white;
+}
+.code{
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+    font-size: small;
+    background-color: #0088cc;
+    padding: 5px;
+}
+.code_response{
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+    font-size: small;
+    background-color: #333333;
+}

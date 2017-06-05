@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Django default" uuid="07da9b11-fa71-4ea5-93e0-465495cfa574">
+      <user-name>pillradmin</user-name>
+      <user-password>dfdadfc3dfc6dfc6dfd8dfcbdfcedfc7dfc3dfc4</user-password>
+      <schema-pattern>pillr.pg_catalog pillr.public</schema-pattern>
+      <default-schemas>pillr.pg_catalog pillr.public</default-schemas>
+    </data-source>
+  </component>
+</project>
